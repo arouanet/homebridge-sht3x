@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/arouanet/homebridge-sht3x/issues"
   },
-  "homepage": "https://github.com/arouanet/homebridge-sht3x#readme"
+  "homepage": "https://github.com/arouanet/homebridge-sht3x#readme",
+  "engines": {
+    "node": ">=6.0.0",
+    "homebridge": ">=0.2.0"
+  }
 }
