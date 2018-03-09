@@ -1,0 +1,22 @@
+{
+  "name": "homebridge-sht3x",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for the Sensirion SHT3x humidity and temperature sensor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arouanet/homebridge-sht3x.git"
+  },
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "author": "Arnaud Rouanet",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/arouanet/homebridge-sht3x/issues"
+  },
+  "homepage": "https://github.com/arouanet/homebridge-sht3x#readme"
+}
