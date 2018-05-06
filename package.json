@@ -4,6 +4,7 @@
   "description": "Homebridge plugin for the Sensirion SHT3x humidity and temperature sensor",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +26,8 @@
   },
   "dependencies": {
     "raspi-node-sht31": "^0.2.0"
+  },
+  "devDependencies": {
+    "standard": "*"
   }
 }
