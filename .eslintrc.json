@@ -1,0 +1,16 @@
+{
+  "extends": "standard",
+  "rules": {
+    "arrow-body-style": "error",
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "dot-notation": "error",
+    "no-use-before-define": "error",
+    "no-var": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": ["error", { "destructuring": "any", "ignoreReadBeforeAssign": true }],
+    "prefer-destructuring": "error",
+    "prefer-template": "error",
+    "strict": "error"
+  }
+}
