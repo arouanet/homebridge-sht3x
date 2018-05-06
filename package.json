@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint --ignore-path .gitignore .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,8 @@
     "raspi-node-sht31": "^0.2.0"
   },
   "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
     "standard": "*"
   }
 }
