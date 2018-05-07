@@ -50,6 +50,9 @@ class SHT3xAccessory {
       .getCharacteristic(Characteristic.CurrentRelativeHumidity)
       .on('get', this.getSensorData.bind(this, data => data.humidity))
 
+    humidityService.isPrimaryService = true
+    humidityService.linkedServices = [temperatureService]
+
     setInterval(this.pollSensorData.bind(this), this.interval * 1000)
     this.pollSensorData()
 
