@@ -9,6 +9,7 @@ class SHT3xAccessory {
     this.log = log
     this.displayName = config.name
     this.interval = config.interval || 60
+    this.historyOptions = config.history || {}
 
     const address = parseInt(config.address, 16) || 0x44
     const bus = config.bus || 1
@@ -61,7 +62,7 @@ class SHT3xAccessory {
     setInterval(this.pollSensorData.bind(this), this.interval * 1000)
     this.pollSensorData()
 
-    this.historyService = new FakeGatoHistoryService('weather', this)
+    this.historyService = new FakeGatoHistoryService('weather', this, this.historyOptions)
 
     return [informationService, temperatureService, humidityService, this.historyService]
   }
