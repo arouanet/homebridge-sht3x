@@ -1,0 +1,22 @@
+{
+  "bridge": {
+    "name": "Homebridge",
+    "username": "CC:22:3D:E3:CE:30",
+    "port": 51826,
+    "pin": "031-45-154"
+  },
+
+  "description": "This is an example configuration file for the SHT3x accessory.",
+
+  "accessories": [
+    {
+      "accessory": "SHT3x",
+      "name": "SHT31",
+      "address": "0x44",
+      "bus": 1,
+      "interval": 60
+    }
+  ],
+
+  "platforms": []
+}
