@@ -67,3 +67,7 @@ buses.
 
 The I²C address for the SHT3x sensor is `0x44` by default, or `0x45` if the ADDR
 pin is connected to logic high.
+
+## Screenshot
+
+<img src="images/home-app.png" alt="Home app" width="375" height="667">
