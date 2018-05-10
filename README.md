@@ -9,6 +9,8 @@ humidity and temperature sensor. Uses
 [raspi-node-sht31](https://github.com/aphotix/raspi-node-sht31) to communicate
 with the device.
 
+<img src="images/sht31-sensor.jpg" alt="SHT31 sensor" width="150" height="150" align="right">
+
 This has only been tested on a Raspberry Pi, but should work with any
 Linux-based board supported by [i2c-bus](https://github.com/fivdi/i2c-bus),
 including C.H.I.P., BeagleBone, or Intel Edison.
