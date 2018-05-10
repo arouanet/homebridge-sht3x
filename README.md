@@ -1,6 +1,7 @@
 # homebridge-sht3x
 
 [![Build Status](https://travis-ci.org/arouanet/homebridge-sht3x.svg?branch=master)](https://travis-ci.org/arouanet/homebridge-sht3x)
+[![NPM Version](https://img.shields.io/npm/v/homebridge-sht3x.svg)](https://www.npmjs.com/package/homebridge-sht3x)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [Homebridge](https://github.com/nfarina/homebridge#readme) plugin for the
