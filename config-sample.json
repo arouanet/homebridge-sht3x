@@ -14,7 +14,7 @@
       "name": "SHT31",
       "address": "0x44",
       "bus": 1,
-      "interval": 60
+      "interval": 120
     }
   ],
 
