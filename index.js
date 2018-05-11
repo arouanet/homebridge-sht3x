@@ -1,11 +1,15 @@
+const moment = require('moment')
 const SHT3xSensor = require('raspi-node-sht31')
 
 let Service, Characteristic
+let FakeGatoHistoryService
 
 class SHT3xAccessory {
   constructor (log, config) {
     this.log = log
+    this.displayName = config.name
     this.interval = config.interval || 60
+    this.historyOptions = config.history || {}
 
     const address = parseInt(config.address, 16) || 0x44
     const bus = config.bus || 1
@@ -20,6 +24,8 @@ class SHT3xAccessory {
 
       this.log(`The current temperature is ${temperature.toFixed(2)} °C`)
       this.log(`The current relative humidity is ${humidity.toFixed(2)} %`)
+
+      this.historyService.addEntry({time: moment().unix(), temp: temperature, humidity: humidity})
 
       this.data = data
     }).catch(err => this.log(err.message))
@@ -56,12 +62,15 @@ class SHT3xAccessory {
     setInterval(this.pollSensorData.bind(this), this.interval * 1000)
     this.pollSensorData()
 
-    return [informationService, temperatureService, humidityService]
+    this.historyService = new FakeGatoHistoryService('weather', this, this.historyOptions)
+
+    return [informationService, temperatureService, humidityService, this.historyService]
   }
 }
 
 module.exports = (homebridge) => {
   ({ Service, Characteristic } = homebridge.hap)
+  FakeGatoHistoryService = require('fakegato-history')(homebridge)
 
   homebridge.registerAccessory('homebridge-sht3x', 'SHT3x', SHT3xAccessory)
 }
