@@ -59,10 +59,10 @@ class SHT3xAccessory {
     humidityService.isPrimaryService = true
     humidityService.linkedServices = [temperatureService]
 
+    this.historyService = new FakeGatoHistoryService('weather', this, this.historyOptions)
+
     setInterval(this.pollSensorData.bind(this), this.interval * 1000)
     this.pollSensorData()
-
-    this.historyService = new FakeGatoHistoryService('weather', this, this.historyOptions)
 
     return [informationService, temperatureService, humidityService, this.historyService]
   }
