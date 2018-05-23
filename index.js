@@ -1,3 +1,5 @@
+const os = require('os')
+
 const moment = require('moment')
 const SHT3xSensor = require('raspi-node-sht31')
 
@@ -44,7 +46,7 @@ class SHT3xAccessory {
     informationService
       .setCharacteristic(Characteristic.Manufacturer, 'Sensirion')
       .setCharacteristic(Characteristic.Model, 'SHT3x')
-      .setCharacteristic(Characteristic.SerialNumber, '-')
+      .setCharacteristic(Characteristic.SerialNumber, `${os.hostname()}-${this.displayName}`)
 
     const temperatureService = new Service.TemperatureSensor()
     temperatureService
