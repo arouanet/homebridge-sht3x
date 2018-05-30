@@ -7,6 +7,7 @@
     "dot-notation": "error",
     "no-use-before-define": "error",
     "no-var": "error",
+    "object-curly-spacing": ["error", "never"],
     "prefer-arrow-callback": "error",
     "prefer-const": ["error", { "destructuring": "any", "ignoreReadBeforeAssign": true }],
     "prefer-destructuring": "error",

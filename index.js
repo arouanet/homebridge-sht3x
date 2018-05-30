@@ -22,7 +22,7 @@ class SHT3xAccessory {
 
   pollSensorData () {
     this.sensor.readSensorData().then((data) => {
-      const { temperature, humidity } = data
+      const {temperature, humidity} = data
 
       this.log(`The current temperature is ${temperature.toFixed(2)} °C`)
       this.log(`The current relative humidity is ${humidity.toFixed(2)} %`)
@@ -72,7 +72,7 @@ class SHT3xAccessory {
 }
 
 module.exports = (homebridge) => {
-  ({ Service, Characteristic } = homebridge.hap)
+  ({Service, Characteristic} = homebridge.hap)
   FakeGatoHistoryService = require('fakegato-history')(homebridge)
 
   homebridge.registerAccessory('homebridge-sht3x', 'SHT3x', SHT3xAccessory)
