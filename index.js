@@ -51,6 +51,7 @@ class SHT3xAccessory {
     const temperatureService = new Service.TemperatureSensor()
     temperatureService
       .getCharacteristic(Characteristic.CurrentTemperature)
+      .setProps({minValue: -40, maxValue: 125})
       .on('get', this.getSensorData.bind(this, data => data.temperature))
 
     const humidityService = new Service.HumiditySensor()
