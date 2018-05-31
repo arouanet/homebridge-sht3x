@@ -3,6 +3,8 @@ const os = require('os')
 const moment = require('moment')
 const SHT3xSensor = require('raspi-node-sht31')
 
+const {version: packageVersion} = require('./package.json')
+
 let Service, Characteristic
 let FakeGatoHistoryService
 
@@ -47,6 +49,7 @@ class SHT3xAccessory {
       .setCharacteristic(Characteristic.Manufacturer, 'Sensirion')
       .setCharacteristic(Characteristic.Model, 'SHT3x')
       .setCharacteristic(Characteristic.SerialNumber, `${os.hostname()}-${this.displayName}`)
+      .setCharacteristic(Characteristic.FirmwareRevision, packageVersion)
 
     const temperatureService = new Service.TemperatureSensor()
     temperatureService
