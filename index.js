@@ -5,13 +5,14 @@ const SHT3xSensor = require('raspi-node-sht31')
 
 const {version: packageVersion} = require('./package.json')
 
-let Service, Characteristic
+let Accessory, Service, Characteristic
 let FakeGatoHistoryService
 
 class SHT3xAccessory {
   constructor (log, config) {
     this.log = log
     this.displayName = config.name
+    this.category = Accessory.Categories.SENSOR
     this.interval = config.interval || 60
     this.historyOptions = config.history || {}
 
@@ -75,7 +76,7 @@ class SHT3xAccessory {
 }
 
 module.exports = (homebridge) => {
-  ({Service, Characteristic} = homebridge.hap)
+  ({Accessory, Service, Characteristic} = homebridge.hap)
   FakeGatoHistoryService = require('fakegato-history')(homebridge)
 
   homebridge.registerAccessory('homebridge-sht3x', 'SHT3x', SHT3xAccessory)
