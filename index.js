@@ -27,9 +27,7 @@ class SHT3xAccessory {
     this.sensor.readSensorData().then((data) => {
       const {temperature, humidity} = data
 
-      this.log(`The current temperature is ${temperature.toFixed(2)} °C`)
-      this.log(`The current relative humidity is ${humidity.toFixed(2)} %`)
-
+      this.log(`Humidity: ${humidity.toFixed(2)} %, Temperature: ${temperature.toFixed(2)} °C`)
       this.historyService.addEntry({time: moment().unix(), temp: temperature, humidity: humidity})
 
       this.data = data
