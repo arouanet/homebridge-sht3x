@@ -3,7 +3,6 @@
   "rules": {
     "arrow-body-style": "error",
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
-    "comma-dangle": ["error", "always-multiline"],
     "dot-notation": "error",
     "no-use-before-define": "error",
     "no-var": "error",
