@@ -10,8 +10,8 @@ humidity and temperature sensor. Uses
 [raspi-node-sht31](https://github.com/aphotix/raspi-node-sht31) to communicate
 with the device and
 [fakegato-history](https://github.com/simont77/fakegato-history) to show
-historical data graphs when using the Elgato
-[Eve app](https://www.elgato.com/en/eve/eve-app).
+historical data graphs when using the
+[Eve app](https://www.evehome.com/en/eve-app).
 
 <img src="images/sht31-sensor.jpg" alt="SHT31 sensor" width="150" height="150" align="right">
 

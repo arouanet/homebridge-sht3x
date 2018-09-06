@@ -11,3 +11,6 @@ charset = utf-8
 
 [*.js]
 max_line_length = 79
+
+[*.md]
+max_line_length = 80
