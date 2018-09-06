@@ -1,6 +1,6 @@
 {
   "name": "homebridge-sht3x",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Homebridge plugin for the Sensirion SHT3x humidity and temperature sensor",
   "main": "index.js",
   "scripts": {
