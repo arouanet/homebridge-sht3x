@@ -15,6 +15,10 @@ historical data graphs when using the
 
 <img src="images/sht31-sensor.jpg" alt="SHT31 sensor" width="150" height="150" align="right">
 
+Breakout boards for the SHT31 sensor are available from
+[Adafruit](https://www.adafruit.com/product/2857) or
+[AliExpress](https://www.aliexpress.com/wholesale?SearchText=sht31+sensor+breakout).
+
 This plugin has only been tested on a Raspberry Pi, but should work with any
 Linux-based board supported by [i2c-bus](https://github.com/fivdi/i2c-bus),
 including C.H.I.P., BeagleBone, or Intel Edison.
