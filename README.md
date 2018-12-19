@@ -17,7 +17,7 @@ historical data graphs when using the
 
 Breakout boards for the SHT31 sensor are available from
 [Adafruit](https://www.adafruit.com/product/2857) or
-[AliExpress](https://www.aliexpress.com/wholesale?SearchText=sht31+sensor+breakout).
+[AliExpress](https://www.aliexpress.com/wholesale?SearchText=sht31+sensor+breakout&SortType=total_tranpro_desc).
 
 This plugin has only been tested on a Raspberry Pi, but should work with any
 Linux-based board supported by [i2c-bus](https://github.com/fivdi/i2c-bus),
