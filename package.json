@@ -24,8 +24,8 @@
     "homebridge": ">=0.2.0"
   },
   "dependencies": {
-    "fakegato-history": "^0.5.2",
-    "raspi-node-sht31": "^0.2.0"
+    "fakegato-history": "^0.5.3",
+    "raspi-node-sht31": "^0.2.1"
   },
   "devDependencies": {
     "standard": "^12.0.1"
