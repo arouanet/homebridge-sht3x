@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/arouanet/homebridge-sht3x#readme",
   "engines": {
-    "node": ">=6.0.0",
-    "homebridge": ">=0.2.0"
+    "node": ">=10.17.0",
+    "homebridge": ">=1.0.0"
   },
   "dependencies": {
     "fakegato-history": "^0.5.6",

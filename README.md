@@ -30,7 +30,7 @@ few examples.
 
 ## Installation
 
-Node.js v6 or greater is required.
+Node.js v10.17.0 or greater is required.
 
 This assumes Homebridge has already been installed. If not, see the
 [Homebridge documentation](https://github.com/nfarina/homebridge#installation)
