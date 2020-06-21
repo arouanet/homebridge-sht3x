@@ -1,0 +1,88 @@
+{
+  "pluginAlias": "SHT3x",
+  "pluginType": "accessory",
+  "singular": false,
+  "footerDisplay": "See the [documentation](https://github.com/arouanet/homebridge-sht3x#configuration) for more details on how to setup and configure the sensor.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "default": "SHT31",
+        "required": true
+      },
+      "address": {
+        "type": "string",
+        "default": "0x44",
+        "enum": ["0x44", "0x45"],
+        "required": true
+      },
+      "bus": {
+        "title": "Bus Number",
+        "type": "number",
+        "minimum": 0,
+        "default": 1,
+        "placeholder": 1
+      },
+      "interval": {
+        "title": "Polling Interval (in seconds)",
+        "description": "Time interval at which the device is polled.",
+        "type": "number",
+        "minimum": 1,
+        "maximum": 600,
+        "default": 120,
+        "placeholder": 60
+      },
+      "history": {
+        "type": "object",
+        "properties": {
+          "storage": {
+            "title": "Storage Backend",
+            "description": "If None, history is stored only in memory; data not saved by the Eve app will be lost when Homebridge restarts.",
+            "type": "string",
+            "oneOf": [
+              {"title": "File System", "const": "fs"},
+              {"title": "Google Drive", "const": "googleDrive"}
+            ]
+          },
+          "folder": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "form": [
+    "name",
+    {
+      "type": "fieldset",
+      "title": "I²C Setup",
+      "expandable": true,
+      "expanded": true,
+      "items": ["address", "bus"]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "History",
+      "items": [
+        "history.storage",
+        {
+          "key": "history.folder",
+          "condition": {"functionBody": "return model.history && model.history.storage === 'googleDrive'"}
+        },
+        {
+          "type": "help",
+          "helpvalue": "<p class='help-block'>See the <a href='https://github.com/simont77/fakegato-history#google-drive' target='_blank' rel='noopener noreferrer'>Fakegato documentation</a> on how to setup authentication with the Google Drive API.</p>",
+          "condition": {"functionBody": "return model.history && model.history.storage === 'googleDrive'"}
+        }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Advanced",
+      "items": ["interval"]
+    }
+  ]
+}
