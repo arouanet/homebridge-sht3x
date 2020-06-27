@@ -34,13 +34,20 @@ Node.js v10.17.0 or greater is required.
 
 This assumes Homebridge has already been installed. If not, see the
 [Homebridge documentation](https://github.com/nfarina/homebridge#installation)
-for more information. Then install this plugin using:
+for more information.
+
+If using [_Homebridge Config UI X_](https://github.com/oznu/homebridge-config-ui-x),
+search for the plugin in the Plugin screen, and install it from there.
+Otherwise you can install it manually with:
 
 ```
-npm install -g homebridge-sht3x
+sudo npm install -g homebridge-sht3x
 ```
 
 ## Configuration
+
+If using _Homebridge Config UI X_, you can configure the plugin from the graphical
+settings editor, or you can edit the `config.json` file manually.
 
 The minimal accessory configuration, containing only the required attributes, is
 as follows:
