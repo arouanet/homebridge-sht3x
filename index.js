@@ -17,7 +17,7 @@ class SHT3xAccessory {
     const address = parseInt(config.address, 16) || 0x44
     const bus = config.bus || 1
 
-    this.log(`Expecting SHT3x I²C sensor at address 0x${address.toString(16)} on bus ${bus}`)
+    log.info(`Expecting SHT3x I²C sensor at address 0x${address.toString(16)} on bus ${bus}`)
     this.sensor = new SHT3xSensor(address, bus)
   }
 
@@ -25,11 +25,11 @@ class SHT3xAccessory {
     this.sensor.readSensorData().then((data) => {
       const {temperature, humidity} = data
 
-      this.log(`Humidity: ${humidity.toFixed(2)} %, Temperature: ${temperature.toFixed(2)} °C`)
+      this.log.debug(`Humidity: ${humidity.toFixed(2)} %, Temperature: ${temperature.toFixed(2)} °C`)
       this.historyService.addEntry({time: moment().unix(), temp: temperature, humidity: humidity})
 
       this.data = data
-    }).catch(err => this.log(err.message))
+    }).catch(err => this.log.warn(err.message))
   }
 
   getSensorData (dataFunction, callback) {
