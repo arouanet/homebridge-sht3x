@@ -15,7 +15,7 @@ class SHT3xAccessory {
     this.historyOptions = config.history || {}
 
     const address = parseInt(config.address, 16) || 0x44
-    const bus = config.bus || 1
+    const bus = (config.bus == null) ? 1 : config.bus
 
     log.info(`Expecting SHT3x I²C sensor at address 0x${address.toString(16)} on bus ${bus}`)
     this.sensor = new SHT3xSensor(address, bus)
