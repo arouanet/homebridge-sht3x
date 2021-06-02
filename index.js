@@ -1,6 +1,5 @@
 const os = require('os')
 
-const moment = require('moment')
 const SHT3xSensor = require('raspi-node-sht31')
 
 let Accessory, Service, Characteristic
@@ -26,7 +25,11 @@ class SHT3xAccessory {
       const {temperature, humidity} = data
 
       this.log.debug(`Humidity: ${humidity.toFixed(2)} %, Temperature: ${temperature.toFixed(2)} °C`)
-      this.historyService.addEntry({time: moment().unix(), temp: temperature, humidity: humidity})
+      this.historyService.addEntry({
+        time: Math.round(new Date().valueOf() / 1000),
+        temp: temperature,
+        humidity: humidity
+      })
 
       this.data = data
     }).catch(err => this.log.warn(err.message))
